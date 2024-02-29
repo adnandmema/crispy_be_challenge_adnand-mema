@@ -7,11 +7,9 @@ using ToDoApp.Domain.Common;
 
 namespace ToDoApp.Domain.Entities
 {
-    public class ToDoItem : FullEntity
+    public class ToDoList : FullEntity
     {
-        public int ToDoListId { get; set; }
         public string Title { get; set; }
-        public string? Note { get; set; }
-        public ToDoList ToDoList { get; set; } = null!;
+        public IList<ToDoItem> Items { get; private set; } = new List<ToDoItem>();
     }
 }
