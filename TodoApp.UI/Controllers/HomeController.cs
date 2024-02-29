@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Diagnostics;
+using System.Net.Http.Headers;
 using TodoApp.UI.Models;
 
 namespace TodoApp.UI.Controllers
@@ -13,8 +15,19 @@ namespace TodoApp.UI.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7144");
+
+                HttpResponseMessage response = await client.GetAsync("/ToDoItems");
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsondata = await response.Content.ReadAsStringAsync();
+                    ViewBag.ToDoItemTitle = jsondata;
+                }
+            }
             return View();
         }
 
