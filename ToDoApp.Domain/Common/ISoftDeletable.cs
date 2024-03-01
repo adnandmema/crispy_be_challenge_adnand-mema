@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToDoApp.Domain.Common
 {
-    internal interface ISoftDeletable
+    public interface ISoftDeletable
     {
         public string? DeletedBy { get; }
 

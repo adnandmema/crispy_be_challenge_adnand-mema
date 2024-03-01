@@ -10,6 +10,6 @@ namespace ToDoApp.Domain.Entities
     public class ToDoList : FullEntity
     {
         public string Title { get; set; }
-        public IList<ToDoItem> Items { get; private set; } = new List<ToDoItem>();
+        public IList<ToDoItem> Items { get; set; } = new List<ToDoItem>();
     }
 }
