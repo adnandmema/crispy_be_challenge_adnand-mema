@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Mvc;
 using ToDoApp.Application.ToDoItems.Queries.GetHelloWorldToDoItem;
 
-namespace TodoApp.API.Controllers
+namespace ToDoApp.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

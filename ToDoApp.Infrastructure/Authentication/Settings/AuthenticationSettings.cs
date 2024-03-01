@@ -9,7 +9,7 @@ namespace ToDoApp.Infrastructure.Authentication.Settings
 {
     public class AuthenticationSettings
     {
-        [Required, MinLength(10)]
+        [Required, MinLength(7)]
         public string JwtIssuer { get; init; } = default!;
 
         [Required, MinLength(1)]

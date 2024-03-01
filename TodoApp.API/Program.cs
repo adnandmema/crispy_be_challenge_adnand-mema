@@ -1,38 +1,36 @@
-
+using ToDoApp.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using System.Reflection;
+using ToDoApp.API.Logging;
 
-namespace TodoApp.API
+namespace ToDoApp.API
 {
-    public class Program
+    [ExcludeFromCodeCoverage]
+    public static class Program
     {
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            builder.Host
+                .AddMySerilogLogging() // Notice: Logging overrides.
+                .ConfigureAppConfiguration((context, config) =>
+                {
+                    // ConfigureWebHostDefaults only adds secrets if environment is Develop.
+                    // This ensures they're always added, for local testing of Production setting.
+                    config.AddUserSecrets(Assembly.GetEntryAssembly(), optional: true);
 
-            builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-            builder.Services.AddApplication();
+                    // Notice: Infrastructure hook.
+                    config.AddMyInfrastructureConfiguration(context);
+                });
+
+            var startup = new Startup(builder.Configuration, builder.Environment);
+
+            startup.ConfigureServices(builder.Services);
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-
-            app.MapControllers();
+            startup.Configure(app);
 
             app.Run();
         }
