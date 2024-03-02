@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  todoapp.api:
+    image: ${DOCKER_REGISTRY-}todoappapi
+    build:
+      context: .
+      dockerfile: TodoApp.API/Dockerfile
+    ports:
+        - "5000:5000"
+        - "5001:5001"
+
+  todoapp.database:
+    image: postgres:latest
+    container_name: todoapp.database
+    environment:
+        - POSTGRES_DB=todoapp
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+    volumes:
+        - todoapp_db:/var/lib/postgresql/data
+    ports:
+        - 5432:5432  
+volumes:
+  todoapp_db:

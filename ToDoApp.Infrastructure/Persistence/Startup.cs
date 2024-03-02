@@ -32,6 +32,7 @@ namespace ToDoApp.Infrastructure.Persistence
                 if (env.IsDevelopment())
                     options.EnableSensitiveDataLogging();
             });
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
         }
 
         public static void Configure(IApplicationBuilder app, IConfiguration configuration)

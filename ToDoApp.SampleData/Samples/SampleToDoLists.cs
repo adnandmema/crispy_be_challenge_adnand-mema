@@ -29,7 +29,7 @@ namespace ToDoApp.SampleData.Samples
                     Items =
                     {
                         new ToDoItem() {Title = "ASAP", Note = "Pay the bills"},
-                        new ToDoItem() {Title = "Wash the car"},
+                        new ToDoItem() {Title = "Wash the car", Note = "test"},
                     }
                 }
             };
