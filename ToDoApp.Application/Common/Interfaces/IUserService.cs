@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ToDoApp.Infrastructure.Authentication.Core.Model;
+using ToDoApp.Application.Common.Models;
 
-namespace ToDoApp.Infrastructure.Authentication.Core.Services
+namespace ToDoApp.Application.Common.Interfaces
 {
     public interface IUserService
     {

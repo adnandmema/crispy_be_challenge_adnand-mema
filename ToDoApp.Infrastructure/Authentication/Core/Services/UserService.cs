@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ToDoApp.Infrastructure.Authentication.Core.Model;
+using ToDoApp.Application.Common.Interfaces;
+using ToDoApp.Application.Common.Models;
 using ToDoApp.Infrastructure.Identity.Model;
 
 namespace ToDoApp.Infrastructure.Authentication.Core.Services

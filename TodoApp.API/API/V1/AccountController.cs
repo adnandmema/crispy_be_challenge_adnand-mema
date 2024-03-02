@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
 using ToDoApp.API.Authentication.Dtos;
-using ToDoApp.Infrastructure.Authentication.Core.Model;
+using ToDoApp.Application.Common.Interfaces;
+using ToDoApp.Application.Common.Models;
 using ToDoApp.Infrastructure.Authentication.Core.Services;
 
 namespace ToDoApp.API.API.V1

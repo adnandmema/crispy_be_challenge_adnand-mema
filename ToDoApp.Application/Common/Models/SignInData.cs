@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ToDoApp.Infrastructure.Authentication.Core.Model
+namespace ToDoApp.Application.Common.Models
 {
     public record SignInData
     {

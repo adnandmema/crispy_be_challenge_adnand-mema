@@ -13,6 +13,7 @@ using ToDoApp.Infrastructure.Common.Extensions;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using ToDoApp.Application.Common.Interfaces;
 
 namespace ToDoApp.Infrastructure.Authentication
 {
