@@ -29,9 +29,5 @@
         public string Username { get; init; } = null!;
 
         public string Email { get; init; } = null!;
-
-        public string? ExternalAuthenticationProvider { get; init; }
-
-        public bool IsExternalLogin { get; init; }
     }
 }

@@ -65,9 +65,7 @@ namespace ToDoApp.API.API.V1
                     TokenType = data.Token.TokenType,
                     ExpiresIn = data.Token.GetRemainingLifetimeSeconds(),
                     Username = data.Username,
-                    Email = data.Email,
-                    IsExternalLogin = data.IsExternalLogin,
-                    ExternalAuthenticationProvider = data.ExternalAuthenticationProvider
+                    Email = data.Email
                 }),
                 _ => throw new InvalidEnumArgumentException("Unknown sign-in result or sign-in data missing.")
             };
