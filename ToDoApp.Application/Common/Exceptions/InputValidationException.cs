@@ -39,10 +39,5 @@ namespace ToDoApp.Application.Common.Exceptions
                 Errors.Add(propertyName, propertyFailures);
             }
         }
-
-        public override string ToString()
-        {
-            return nameof(InputValidationException) + ": " + JsonSerializer.Serialize(this, new JsonSerializerOptions() { WriteIndented = true });
-        }
     }
 }

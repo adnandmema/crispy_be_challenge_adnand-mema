@@ -19,6 +19,9 @@ namespace ToDoApp.Infrastructure.Persistence.Configurations
 
             builder.Property(t => t.Note)
                 .HasMaxLength(500);
+
+            builder.Property(t => t.ToDoListId)
+                .IsRequired();
         }
     }
 }

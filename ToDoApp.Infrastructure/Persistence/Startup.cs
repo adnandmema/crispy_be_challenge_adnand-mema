@@ -9,6 +9,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ToDoApp.Application.Common.Interfaces;
 using ToDoApp.Infrastructure.Common.Extensions;
 using ToDoApp.Infrastructure.Persistence.Context;
 using ToDoApp.Infrastructure.Persistence.Settings;
@@ -33,6 +34,7 @@ namespace ToDoApp.Infrastructure.Persistence
                     options.EnableSensitiveDataLogging();
             });
             AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
         }
 
         public static void Configure(IApplicationBuilder app, IConfiguration configuration)
