@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.API", "TodoApp.API\ToDoApp.API.csproj", "{F6E228B7-ABDC-4D8B-9ACF-E22DA27869DC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.UI", "TodoApp.UI\TodoApp.UI.csproj", "{560F3556-AAB1-4A09-B368-598F0E54006A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.UI", "TodoApp.UI\ToDoApp.UI.csproj", "{560F3556-AAB1-4A09-B368-598F0E54006A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Domain", "ToDoApp.Domain\ToDoApp.Domain.csproj", "{AFBFD08D-E6F0-46D3-B145-458D833AFF51}"
 EndProject

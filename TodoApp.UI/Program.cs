@@ -1,4 +1,4 @@
-namespace TodoApp.UI
+namespace ToDoApp.UI
 {
     public class Program
     {

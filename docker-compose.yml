@@ -9,7 +9,14 @@ services:
     ports:
         - "5000:5000"
         - "5001:5001"
-
+  todoapp.ui:
+    image: ${DOCKER_REGISTRY-}todoappui
+    build:
+      context: .
+      dockerfile: TodoApp.UI/Dockerfile
+    ports:
+        - "5002:5002"
+        - "5003:5003"
   todoapp.database:
     image: postgres:latest
     container_name: todoapp.database
