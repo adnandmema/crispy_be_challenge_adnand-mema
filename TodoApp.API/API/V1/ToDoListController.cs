@@ -55,9 +55,9 @@ namespace ToDoApp.API.API.V1
 
         [Authorize]
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteToDoList(int id, [FromBody] DeleteToDoListCommand command)
+        public async Task<IActionResult> DeleteToDoList([FromRoute] int id)
         {
-            if (id != command.Id) return BadRequest();
+            DeleteToDoListCommand command = new DeleteToDoListCommand() { Id = id };
             await _mediator.Send(command);
             return NoContent();
         }

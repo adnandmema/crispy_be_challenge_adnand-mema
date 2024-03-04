@@ -1,0 +1,25 @@
+﻿@model ToDoApp.UI.Models.PaginatedList<ToDoListDto>
+
+<div class="container mt-5">
+    <h1>To-Do Lists</h1>
+    @Html.ActionLink("Create", "Create", "ToDoList", null, new { @class = "btn btn-primary" })
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var toDoList in Model.Items)
+            {
+                <tr>
+                    <td>@toDoList.Id</td>
+                    <td>@toDoList.Title</td>
+                    <td>@Html.ActionLink("Delete", "Delete", "ToDoList", new { id = toDoList.Id }, new { @class = "btn btn-danger" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

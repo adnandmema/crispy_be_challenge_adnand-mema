@@ -9,10 +9,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["ToDoApp.UI/ToDoApp.UI.csproj", "ToDoApp.UI/"]
-RUN dotnet restore "./ToDoApp.UI/./ToDoApp.UI.csproj"
+COPY ["TodoApp.UI/ToDoApp.UI.csproj", "TodoApp.UI/"]
+RUN dotnet restore "./TodoApp.UI/./ToDoApp.UI.csproj"
 COPY . .
-WORKDIR "/src/ToDoApp.UI"
+WORKDIR "/src/TodoApp.UI"
 RUN dotnet build "./ToDoApp.UI.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
