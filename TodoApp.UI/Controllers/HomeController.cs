@@ -1,8 +1,12 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Diagnostics;
-using TodoApp.UI.Models;
+using System.Net.Http.Headers;
+using System.Reflection;
+using ToDoApp.UI.Models;
 
-namespace TodoApp.UI.Controllers
+namespace ToDoApp.UI.Controllers
 {
     public class HomeController : Controller
     {
@@ -13,7 +17,7 @@ namespace TodoApp.UI.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             return View();
         }

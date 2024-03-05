@@ -1,0 +1,17 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "todoapp.ui",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}",
+      "serviceActions": {
+        "todoapp.api": "StartDebugging",
+        "todoapp.ui": "StartDebugging",
+        "pgadmin": "StartWithoutDebugging",
+        "todoapp.database": "StartWithoutDebugging"
+      }
+    }
+  }
+}
