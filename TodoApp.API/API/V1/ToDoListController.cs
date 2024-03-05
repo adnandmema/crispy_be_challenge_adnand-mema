@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Asp.Versioning;
+using MediatR;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using ToDoApp.Application.Common.Exceptions;
@@ -16,7 +17,8 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 namespace ToDoApp.API.API.V1
 {
     [ApiController]
-    [Route("[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{v:apiVersion}/todolist")]
     public class ToDoListController : ControllerBase
     {
         private readonly IMediator _mediator;

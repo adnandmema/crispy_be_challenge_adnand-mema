@@ -17,7 +17,7 @@ namespace ToDoApp.UI.Services
         {
             _httpContext = httpContext;
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri("https://todoapp.api:5001/");
+            _httpClient.BaseAddress = new Uri("https://todoapp.api:5001/api/v1/");
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _httpContext.HttpContext.Session.GetString("JWTToken"));
 
         }
@@ -25,7 +25,7 @@ namespace ToDoApp.UI.Services
         public async Task<LoginResponseDto> Login(LoginViewModel model)
         {
             var loginData = new { username = model.Username, password = model.Password };
-            var response = await _httpClient.PostAsJsonAsync("v1/account/login", loginData);
+            var response = await _httpClient.PostAsJsonAsync("account/login", loginData);
 
             if (response.IsSuccessStatusCode)
                 return await response.Content.ReadFromJsonAsync<LoginResponseDto>();
