@@ -1,0 +1,6 @@
+﻿D:\source\ToDoApp\ToDoApp.Domain\Common\FullEntity.cs
+D:\source\ToDoApp\ToDoApp.Domain\Common\IAudited.cs
+D:\source\ToDoApp\ToDoApp.Domain\Common\IEntity.cs
+D:\source\ToDoApp\ToDoApp.Domain\Common\ISoftDeletable.cs
+D:\source\ToDoApp\ToDoApp.Domain\Entities\ToDoItem.cs
+D:\source\ToDoApp\ToDoApp.Domain\Entities\ToDoList.cs
