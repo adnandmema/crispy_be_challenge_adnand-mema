@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.API", "TodoApp.API\TodoApp.API.csproj", "{F6E228B7-ABDC-4D8B-9ACF-E22DA27869DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.API", "TodoApp.API\ToDoApp.API.csproj", "{F6E228B7-ABDC-4D8B-9ACF-E22DA27869DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.UI", "TodoApp.UI\TodoApp.UI.csproj", "{560F3556-AAB1-4A09-B368-598F0E54006A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.UI", "TodoApp.UI\ToDoApp.UI.csproj", "{560F3556-AAB1-4A09-B368-598F0E54006A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Domain", "ToDoApp.Domain\ToDoApp.Domain.csproj", "{AFBFD08D-E6F0-46D3-B145-458D833AFF51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Domain", "ToDoApp.Domain\ToDoApp.Domain.csproj", "{AFBFD08D-E6F0-46D3-B145-458D833AFF51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Application", "ToDoApp.Application\ToDoApp.Application.csproj", "{1708BA6B-84DE-4A2F-93A6-8701C99D58E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Application", "ToDoApp.Application\ToDoApp.Application.csproj", "{1708BA6B-84DE-4A2F-93A6-8701C99D58E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Infrastructure", "ToDoApp.Infrastructure\ToDoApp.Infrastructure.csproj", "{D9067E9F-1CF6-46E3-AE54-F94A9130D0C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.Infrastructure", "ToDoApp.Infrastructure\ToDoApp.Infrastructure.csproj", "{D9067E9F-1CF6-46E3-AE54-F94A9130D0C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp.SampleData", "ToDoApp.SampleData\ToDoApp.SampleData.csproj", "{A463EA8A-C838-45CE-A8DE-7BADEA7F676A}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{35932258-52D7-4BAB-9B6F-692F226A0419}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{D9067E9F-1CF6-46E3-AE54-F94A9130D0C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9067E9F-1CF6-46E3-AE54-F94A9130D0C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9067E9F-1CF6-46E3-AE54-F94A9130D0C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A463EA8A-C838-45CE-A8DE-7BADEA7F676A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A463EA8A-C838-45CE-A8DE-7BADEA7F676A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A463EA8A-C838-45CE-A8DE-7BADEA7F676A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A463EA8A-C838-45CE-A8DE-7BADEA7F676A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35932258-52D7-4BAB-9B6F-692F226A0419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35932258-52D7-4BAB-9B6F-692F226A0419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35932258-52D7-4BAB-9B6F-692F226A0419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35932258-52D7-4BAB-9B6F-692F226A0419}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

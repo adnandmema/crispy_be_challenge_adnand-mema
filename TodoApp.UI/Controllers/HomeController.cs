@@ -1,10 +1,12 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Diagnostics;
 using System.Net.Http.Headers;
-using TodoApp.UI.Models;
+using System.Reflection;
+using ToDoApp.UI.Models;
 
-namespace TodoApp.UI.Controllers
+namespace ToDoApp.UI.Controllers
 {
     public class HomeController : Controller
     {
@@ -17,17 +19,6 @@ namespace TodoApp.UI.Controllers
 
         public async Task<IActionResult> Index()
         {
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri("https://localhost:7144");
-
-                HttpResponseMessage response = await client.GetAsync("/ToDoItems");
-                if (response.IsSuccessStatusCode)
-                {
-                    string jsondata = await response.Content.ReadAsStringAsync();
-                    ViewBag.ToDoItemTitle = jsondata;
-                }
-            }
             return View();
         }
 

@@ -1,0 +1,3 @@
+﻿D:\source\ToDoApp\docker-compose.override.yml
+D:\source\ToDoApp\docker-compose.yml
+D:\source\ToDoApp\.dockerignore
