@@ -9,6 +9,8 @@ services:
     ports:
         - "5000:5000"
         - "5001:5001"
+    depends_on:
+        - todoapp.database
   todoapp.ui:
     image: ${DOCKER_REGISTRY-}todoappui
     build:
@@ -17,6 +19,8 @@ services:
     ports:
         - "5002:5002"
         - "5003:5003"
+    depends_on:
+        - todoapp.api
   todoapp.database:
     image: postgres:latest
     container_name: todoapp.database
