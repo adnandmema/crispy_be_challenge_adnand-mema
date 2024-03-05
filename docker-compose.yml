@@ -25,7 +25,7 @@ services:
     image: postgres:latest
     container_name: todoapp.database
     environment:
-        - POSTGRES_DB=todoapp
+        - POSTGRES_MULTIPLE_DATABASES:"todoapp, sonarqube"
         - POSTGRES_USER=postgres
         - POSTGRES_PASSWORD=postgres
     volumes:
@@ -43,6 +43,28 @@ services:
       PGADMIN_DEFAULT_PASSWORD: strong-password1
     volumes:
       - pgadmin-data:/var/lib/pgadmin
+  sonarqube:
+    container_name: sonarqube
+    image: sonarqube
+    depends_on:
+        - todoapp.database
+    environment:
+        - SONARQUBE_JDBC_USERNAME=postgres
+        - SONARQUBE_JDBC_PASSWORD=postgres
+        - SONARQUBE_JDBC_URL=jdbc:postgresql://todoapp.database:5432/sonarqube
+    volumes:
+        - sonarqube_conf:/opt/sonarqube/conf
+        - sonarqube_data:/opt/sonarqube/data
+        - sonarqube_extensions:/opt/sonarqube/extensions
+        - sonarqube_bundled-plugins:/opt/sonarqube/lib/bundled-plugins
+    ports:
+        - 9000:9000
 volumes:
   todoapp_db:
   pgadmin-data:
+  sonarqube_database_data:
+  sonarqube_bundled-plugins:
+  sonarqube_conf:
+  sonarqube_data:
+  sonarqube_database:
+  sonarqube_extensions:
